@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedK0D Website</title>
+</head>
+<body>
+  <h1>Welcome to RedK0D Website</h1>
+
+  <label>Script Box 1:</label><br>
+  <textarea id="textbox1" rows="4" cols="60">loadstring(game:HttpGet("https://pastefy.app/C47X7Zhq/raw"))()</textarea>
+  <button onclick="copyText('textbox1')">Copy</button><br><br>
+
+  <label>Script Box 2:</label><br>
+  <textarea id="textbox2" rows="4" cols="60">loadstring(game:HttpGet("https://pastefy.app/kLrqSeEp/raw"))()</textarea>
+  <button onclick="copyText('textbox2')">Copy</button><br><br>
+
+  <script>
+    function copyText(id) {
+      const textArea = document.getElementById(id);
+      textArea.select();
+      textArea.setSelectionRange(0, 99999); // For mobile devices
+
+      navigator.clipboard.writeText(textArea.value)
+        .then(() => alert("Copied to clipboard!"))
+        .catch(err => alert("Failed to copy: " + err));
+    }
+  </script>
+</body>
+</html>
